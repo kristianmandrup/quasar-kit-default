@@ -17,23 +17,15 @@ function load (name) {
   }
 }
 
-let routes = {
-  // Not found
-  '*': {
-    component: load('error404')
-  },
 
-  // Default
-  '/': {
-    component: load('index')
-    /*
-    subRoutes: {
-    }
-    */
-  }
-}
+const routes = [
+  { path: '*', component: load('error404') }, // Not found
+  { path: '/', component: load('index') } // Default
+]
 
-let Router = new VueRouter()
-Router.map(routes)
+const router = new VueRouter({
+  routes
+})
 
-export default Router
+
+export default router

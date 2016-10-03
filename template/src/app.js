@@ -19,5 +19,7 @@ Vue.use(VueTouch) // Touch events
 Vue.use(Quasar) // Install Quasar Framework
 
 Quasar.start(() => {
-  Router.start(Vue.extend({}), '#quasar-app')
+  new Vue({
+    router
+  }).$mount('#quasar-app')
 })
